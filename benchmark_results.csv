@@ -1,0 +1,11 @@
+server,type,requests,duration_ms
+uvicorn,async,10,0.19
+
+uvicorn,sync,10,0.12999999999999998
+uvicorn,sync,10,0.208
+uvicorn,sync,10,0.155
+uvicorn,sync,10,0.273
+uvicorn,sync,10,0.614
+uvicorn,sync,10,0.537
+uvicorn,sync,10,0.55
+uvicorn,sync,10,0.250000000000002
