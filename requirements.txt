@@ -1,3 +1,4 @@
+altair
 fastapi
 uvicorn
 gunicorn
