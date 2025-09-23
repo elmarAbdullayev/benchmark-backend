@@ -9,3 +9,7 @@ uvicorn,sync,10,0.614
 uvicorn,sync,10,0.537
 uvicorn,sync,10,0.55
 uvicorn,sync,10,0.250000000000002
+gunicorn,async,0.159
+gunicorn,async,0.121
+gunicorn,async,0.155
+gunicorn,async,0.152

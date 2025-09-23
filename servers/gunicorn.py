@@ -41,3 +41,17 @@ def get_sync_function (req:RequestModel):
                "duration_ms": duration_ms}]
     save_result("benchmark_results.csv", result)
     return result
+
+
+@gunicorn_api.get("/get_sync_gunicorn_function")
+async def get_async_function ():
+    start = datetime.now()
+    await async_test()
+    end = datetime.now()
+    duration_ms = (end - start).total_seconds() * 1000
+    result = [{"server": "gunicorn",
+               "type": "async",
+
+               "duration_ms": duration_ms}]
+    save_result("benchmark_results.csv", result)
+    return result
