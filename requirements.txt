@@ -5,3 +5,8 @@ gunicorn
 streamlit
 pandas
 psutil
+sqlalchemy
+pymysql
+pydantic
+python-multipart
+

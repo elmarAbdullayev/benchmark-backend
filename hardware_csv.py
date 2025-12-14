@@ -1,23 +1,11 @@
+# hardware_app.py
 import streamlit as st
 import pandas as pd
-import altair as alt
 
-# Titel
-st.title("FastAPI Benchmark Hardware Ergebnisse")
-
-# CSV laden
-data = pd.read_csv("hardware_result.csv")
-
-# Daten anzeigen
-st.write("Rohdaten:")
-st.dataframe(data)
-
-# Balkendiagramm erstellen
-chart = alt.Chart(data).mark_bar().encode(
-    x='requests:N',          # X-Achse = Anzahl Requests
-    y='duration_ms:Q',       # Y-Achse = Dauer in ms
-    color='server:N',        # Farbe nach Server
-    tooltip=['server', 'type', 'duration_ms']
-)
-
-st.altair_chart(chart, use_container_width=True)
+st.title("Hardware Info")
+try:
+    df = pd.read_csv("hardware_info.csv")
+    st.dataframe(df)
+    st.bar_chart(df.set_index("test_session_id")[["cpu_percent", "memory_used_mb"]])
+except Exception as e:
+    st.warning("Keine Hardware-Daten gefunden: " + str(e))
